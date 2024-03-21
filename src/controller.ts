@@ -11,7 +11,7 @@ export const getHome = async (req: IncomingMessage, res: ServerResponse) => {
 export const getNewForm = async (req: IncomingMessage, res: ServerResponse) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/html");
-  res.end(await renderTemplate("src/views/NewView.hbs", { title: "Create Pokemon" }));
+  res.end(await renderTemplate("src/views/NewFormView.hbs", { title: "Create Pokemon" }));
 };
 
 export const getOnePokemon = async (
@@ -63,7 +63,7 @@ export const getAllPokemon = async (
   res.end(
     await renderTemplate("src/views/ListView.hbs", {
       title: "All Pokemon",
-      pokemon: pokemon,
+      pokemon: database,
     }),
   );
 };
