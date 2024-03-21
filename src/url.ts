@@ -27,6 +27,11 @@ export const IMAGES_PATH = "images";
  * @example /pokemon/:id + { id: 1 } = https://localhost:3000/pokemon/1
  */
 export const getPath = (path = "", parameters?: Record<string, string>) => {
+  if (path === "")
+  {
+    path = "home" 
+  }
+
   let url = `${BASE_PATH}/${path}`;
 
   if (!parameters) {
